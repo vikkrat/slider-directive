@@ -1,0 +1,37 @@
+<div *carousel="let image from images; let ctrl = controller">
+  <img [src]="image.url" class="mat-elevation-z4">
+
+  <footer>
+    <button (click)="ctrl.prev()">
+      Prev
+    </button>
+    <button (click)="ctrl.next()">
+      Next
+    </button>
+  </footer>
+</div>
+
+<hr>
+
+<div *carousel="let image from images autoplay 'on' withDelay 1000" class="mat-elevation-z4">
+  <img [src]="image.url">
+</div>
+
+<hr>
+
+<div *carousel="let image from images; let ctrl = controller">
+
+  <button (click)="ctrl.prev()" class="left-button">
+    navigate_before
+  </button>
+
+  <main class="mat-elevation-z4">
+    <img [src]="image.url">
+    <p>{{ image.description }}</p>
+  </main>
+
+  <button (click)="ctrl.next()" class="right-button">
+    navigate_next
+  </button>
+</div>
+
